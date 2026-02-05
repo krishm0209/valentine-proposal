@@ -235,7 +235,8 @@
 
         .memory-photo {
             width: 100%;
-            height: 300px;
+            min-height: 300px;
+            max-height: 600px;
             background: linear-gradient(135deg, #ffe0f0, #ffeef8);
             border-radius: 15px;
             display: flex;
@@ -248,12 +249,24 @@
             overflow: hidden;
         }
 
+        .memory-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 15px;
+        }
+
         .memory-photo::before {
             content: 'Add Your Photo Here 📷';
             position: absolute;
             font-size: 18px;
             color: #ff69b4;
             bottom: 20px;
+            z-index: 1;
+        }
+        
+        .memory-photo:has(img)::before {
+            content: none;
         }
 
         .sticker-corner {
@@ -330,13 +343,24 @@
             border-radius: 15px;
             padding: 15px;
             border: 3px dashed #ff69b4;
-            aspect-ratio: 1;
+            min-height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 48px;
             position: relative;
             transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         .photo-item:hover {
@@ -619,7 +643,6 @@
                     <p>I still remember the first day we texted, it was so weird and wonderful! I remember you had to go for lunch with your friends, I was most likely playing FIFA 🤓, but still it was very memorable how I started talking to you by saying "Yo I met this girl I have to tell you about, she has the same birthday as me". It was very weird of me but ehh I pulled it off I guess..</p>
                     <div class="memory-photo">
                         <img src="IMG_3565.jpg" alt="The day we started talking" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
-                        🎭✨
                     </div>
                     <div class="love-quote">
                         "Some people arrive and make such a beautiful impact on your life, you can barely remember what life was like without them." This was you in my life, I really dk whose quote this is but ehh its the effort that matters 😎.
@@ -639,14 +662,13 @@
                     <div class="photo-grid">
                         <div class="photo-item">
                             <img src="IMG_1714.jpg" alt="Our conversations" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
-                            📱💕
                         </div>
                         <div class="photo-item">
-                            <!-- <img src="coffee-date.jpg" alt="Coffee together" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"> -->
+                            <!-- <img src="coffee-date.jpg" alt="Coffee together"> -->
                             ☕🌸
                         </div>
                         <div class="photo-item">
-                            <!-- <img src="night-talk.jpg" alt="Late night talks" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"> -->
+                            <!-- <img src="night-talk.jpg" alt="Late night talks"> -->
                             🌙⭐
                         </div>
                     </div>
@@ -664,7 +686,7 @@
                     <h3>We Became Official! 🎊</h3>
                     <p>The best day ever! August 7th, 2025 - the day you officially became mine and I became yours. My heart was so full of joy, I thought it might burst! This marked the beginning of our incredible adventure together.</p>
                     <div class="memory-photo">
-                        <!-- <img src="official-day.jpg" alt="The day we became official" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"> -->
+                        <!-- <img src="official-day.jpg" alt="The day we became official"> -->
                         💑💕
                     </div>
                     <div class="love-quote">
@@ -684,19 +706,19 @@
                     <p>Every day with you is an adventure. From quiet moments to exciting experiences, from silly jokes to deep conversations - every single moment is a treasure. You've made these past months the happiest of my life!</p>
                     <div class="photo-grid">
                         <div class="photo-item">
-                            <!-- <img src="movie-night.jpg" alt="Movie dates" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"> -->
+                            <!-- <img src="movie-night.jpg" alt="Movie dates"> -->
                             🎬🍿
                         </div>
                         <div class="photo-item">
-                            <!-- <img src="dinner-date.jpg" alt="Dinner together" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"> -->
+                            <!-- <img src="dinner-date.jpg" alt="Dinner together"> -->
                             🍕❤️
                         </div>
                         <div class="photo-item">
-                            <!-- <img src="sunset.jpg" alt="Beautiful moments" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"> -->
+                            <!-- <img src="sunset.jpg" alt="Beautiful moments"> -->
                             🌅💖
                         </div>
                         <div class="photo-item">
-                            <!-- <img src="fun-times.jpg" alt="Having fun together" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"> -->
+                            <!-- <img src="fun-times.jpg" alt="Having fun together"> -->
                             🎮✨
                         </div>
                     </div>
@@ -714,7 +736,7 @@
                     <h3>Our First Valentine's Day Together! 💕</h3>
                     <p>And now here we are, celebrating our first Valentine's Day as a couple! You are my best friend, my partner, my everything. Thank you for saying YES to being my Valentine! I can't wait to create a million more memories with you.</p>
                     <div class="memory-photo">
-                        <!-- <img src="valentines-day.jpg" alt="Our first Valentine's Day" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"> -->
+                        <!-- <img src="valentines-day.jpg" alt="Our first Valentine's Day"> -->
                         💐💑
                     </div>
                     <div class="love-quote">
