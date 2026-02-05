@@ -734,7 +734,6 @@
                     <p>It is both of ours first Valentines Day, so lets make it special and unforgettable! Since i am a nice man I will let you decide the day muah!"I am too lazy all my mehnat is on this". But please neeche ek aur contract hai sign kardioooo pleaseeeee.</p>
                     <div class="memory-photo">
                         <img src="IMG_3028.jpg" alt="Our first Valentine's Day">
-                        💐💑
                     </div>
                     <div class="love-quote">
                         "I love you not only for what you are, but for what I am when I am with you. Cheesy Line part 3, ChatGPT mere se zyada aashiq hai bc yeh kaise hogaya" 💖
@@ -974,34 +973,39 @@
         ctx.lineJoin = 'round';
 
         // Mouse events
-        canvas.addEventListener('mousedown', startDrawing);
-        canvas.addEventListener('mousemove', draw);
-        canvas.addEventListener('mouseup', stopDrawing);
-        canvas.addEventListener('mouseout', stopDrawing);
-
-        // Touch events
-        canvas.addEventListener('touchstart', handleTouch);
-        canvas.addEventListener('touchmove', handleTouch);
-        canvas.addEventListener('touchend', stopDrawing);
+        canvas.addEventListener('pointerdown', startDrawing);
+        canvas.addEventListener('pointermove', draw);
+        canvas.addEventListener('pointerup', stopDrawing);
+        canvas.addEventListener('pointerleave', stopDrawing);
+        canvas.addEventListener('pointercancel', stopDrawing);
 
         function startDrawing(e) {
             isDrawing = true;
+            hasDrawn = true;
+        
             const rect = canvas.getBoundingClientRect();
             ctx.beginPath();
-            ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+            ctx.moveTo(
+                e.clientX - rect.left,
+                e.clientY - rect.top
+            );
         }
 
         function draw(e) {
             if (!isDrawing) return;
-            hasDrawn = true;
+        
             const rect = canvas.getBoundingClientRect();
-            ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+            ctx.lineTo(
+                e.clientX - rect.left,
+                e.clientY - rect.top
+            );
             ctx.stroke();
         }
 
         function stopDrawing() {
             isDrawing = false;
         }
+
 
         function handleTouch(e) {
             e.preventDefault();
