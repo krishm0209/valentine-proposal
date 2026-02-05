@@ -335,35 +335,38 @@
         /* Photo gallery grid */
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
             margin: 40px 0;
         }
 
         .photo-item {
             background: linear-gradient(135deg, #ffe0f0, #ffeef8);
             border-radius: 15px;
-            padding: 12px;
+            padding: 10px;
             border: 3px dashed #ff69b4;
-
-            display: block;            /* 🔥 REMOVE flex */
+            min-height: 450px;
+            max-height: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            position: relative;
+            transition: transform 0.3s ease;
             overflow: visible;
         }
 
         .photo-item img {
-            display: block;            /* 🔥 IMPORTANT */
             width: 100%;
             height: auto;
-            max-width: 100%;
-            border-radius: 12px;
+            max-height: none;          
+            object-fit: contain;            
+            border-radius: 15px;
         }
-
 
         .photo-item:hover {
-            transform: scale(1.04) rotate(1.5deg);
-            transition: transform 0.3s ease;
+            transform: scale(1.04) rotate(1.5deg); /* slightly softer hover */
         }
-
 
         .love-quote {
             background: linear-gradient(135deg, #fff0f5, #ffe4e1);
@@ -659,7 +662,7 @@
                     <p>From texting, to calling and to video calling our journey was so fun. I know I was confused which is True but in that confusion I realised that you are the person for me, and I love how we grew closer and closer day after day. Me singing Paro to you and u saying now onwards Ill only listen to this version was possibly the cutest thing that has ever happened to me. You were there for me for possibly the roughest patch of my life and you still are which is why I am so grateful to have you in my life. I love you my cutu BJ muah.</p>
                     <div class="photo-grid">
                         <div class="photo-item">
-                            <img src="IMG_1714.jpg">
+                            <img src="IMG_1714.PNG">
                         </div>
                         <div class="photo-item">
                             <!-- <img src="coffee-date.jpg" alt="Coffee together"> -->
